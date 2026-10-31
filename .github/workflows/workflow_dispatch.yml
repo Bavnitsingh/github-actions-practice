@@ -1,0 +1,21 @@
+name: Manual dispatch demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Where to deploy"
+        required: true
+        type: choice
+        options: [dev, staging, prod]
+        default: dev
+      debug:
+        description: "Verbose output"
+        type: boolean
+        default: false
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Event is ${{ github.event_name }}, deploying to ${{ inputs.environment }}, debug=${{ inputs.debug }}"

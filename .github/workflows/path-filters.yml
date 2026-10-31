@@ -1,0 +1,11 @@
+name: Path filters demo
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "src changed in commit ${GITHUB_SHA::7}"
