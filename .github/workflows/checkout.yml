@@ -9,7 +9,6 @@ jobs:
       - name: Without checkout
         run: ls -la          # empty (or only runner files)
 
-      - uses: actions/checkout@v4
 
       - name: With checkout
         run: ls -la          # now your repo files appear
