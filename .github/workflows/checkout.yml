@@ -1,6 +1,7 @@
 name: Checkout Actions
 
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
   list-files:
